@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Miles McQueen | Accessible websites for public agencies and nonprofits</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2210%22%20fill%3D%22%23173A5E%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2244%22%20font-family%3D%22Arial%2C%20sans-serif%22%20font-size%3D%2234%22%20font-weight%3D%22700%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3EM%3C%2Ftext%3E%3C%2Fsvg%3E">
+<meta name="description" content="Fixed-price accessibility tune-ups and care for WordPress websites run by small public agencies and nonprofits. New York City.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap">
+<style>
+:root {
+  --ink: #1B1E23;
+  --ink-2: #4A4F57;
+  --navy: #173A5E;
+  --navy-dark: #0F2A45;
+  --blue: #1C5BA8;
+  --tint: #EEF3F8;
+  --paper: #F6F7F8;
+  --line: #D7DCE2;
+  --gold: #F2B630;
+  --radius: 4px;
+  --wrap: 1040px;
+  --gutter: clamp(16px, 4vw, 32px);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { margin: 0; background: #fff; color: var(--ink); font-family: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; font-size: 1.125rem; line-height: 1.6; }
+h1, h2, h3 { margin: 0; line-height: 1.2; text-wrap: balance; }
+p, ul, ol { margin: 0; }
+a { color: var(--blue); text-underline-offset: 0.18em; }
+a:hover { color: var(--navy-dark); text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+.wrap { max-width: calc(var(--wrap) + 2 * var(--gutter)); margin-inline: auto; padding-inline: var(--gutter); }
+.skip { position: absolute; left: 12px; top: -200px; z-index: 10; padding: 12px 16px; border: 3px solid var(--ink); border-radius: var(--radius); background: #fff; color: var(--ink); font-weight: 700; }
+.skip:focus { top: 12px; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
+
+header { background: var(--navy); color: #fff; }
+header :focus-visible { outline-color: var(--gold); }
+.top { display: flex; align-items: center; justify-content: space-between; gap: 12px 24px; flex-wrap: wrap; padding-block: 18px; }
+.name { color: #fff; font-size: 1.25rem; font-weight: 700; text-decoration: none; }
+.name:hover { color: #fff; text-decoration: underline; }
+.top-links { display: flex; gap: 6px 22px; flex-wrap: wrap; list-style: none; padding: 0; font-size: 1rem; }
+.top-links a { color: #fff; }
+.hero { padding-block: 56px 64px; }
+.hero h1 { max-width: 20em; font-size: clamp(2rem, 4.4vw, 3rem); font-weight: 700; letter-spacing: -0.01em; }
+.hero p { max-width: 36em; margin-top: 18px; font-size: 1.25rem; color: #DCE6F1; }
+.hero .cta { display: inline-flex; align-items: center; min-height: 48px; margin-top: 28px; padding: 0 22px; border-radius: var(--radius); background: var(--gold); color: var(--ink); font-weight: 700; text-decoration: none; }
+.hero .cta:hover { background: #E0A21A; color: var(--ink); }
+
+main section { padding-block: 56px; }
+main section + section { border-top: 1px solid var(--line); }
+h2 { font-size: clamp(1.625rem, 3vw, 2rem); }
+h2 + p, h2 + ul, h2 + ol, h2 + .offer, h2 + .table-wrap { margin-top: 16px; }
+.lead { max-width: 40em; color: var(--ink-2); }
+
+.offer { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 32px; margin-top: 24px; padding: 28px; border: 1px solid var(--line); border-top: 6px solid var(--navy); border-radius: var(--radius); background: var(--paper); }
+.offer h3 { font-size: 1.25rem; }
+.offer ul { margin-top: 12px; padding-left: 1.2em; }
+.offer li + li { margin-top: 6px; }
+.price { font-size: 2.75rem; font-weight: 700; line-height: 1; color: var(--navy); }
+.price-note { margin-top: 8px; color: var(--ink-2); }
+.terms { margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--line); font-size: 1rem; }
+.terms p + p { margin-top: 8px; }
+
+.table-wrap:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+.table-wrap { position: relative; overflow-x: auto; margin-top: 20px; border: 1px solid var(--line); border-radius: var(--radius); }
+table { width: 100%; border-collapse: collapse; font-size: 1rem; line-height: 1.45; }
+caption { padding: 12px 16px; border-bottom: 1px solid var(--line); font-weight: 700; text-align: left; }
+th, td { padding: 12px 16px; border-top: 1px solid var(--line); text-align: left; vertical-align: top; }
+thead th { border-top: 0; background: var(--tint); }
+td.std { white-space: nowrap; color: var(--ink-2); }
+th.num, td.num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+td.num { font-weight: 700; }
+.note { margin-top: 12px; font-size: 0.9375rem; color: var(--ink-2); }
+
+.steps { margin-top: 20px; padding: 0; list-style: none; counter-reset: s; display: grid; gap: 14px; }
+.steps li { position: relative; padding: 4px 0 0 52px; min-height: 36px; counter-increment: s; }
+.steps li::before { content: counter(s); position: absolute; left: 0; top: 0; display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%; background: var(--navy); color: #fff; font-weight: 700; font-size: 1rem; }
+
+.about { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 40px; }
+.contact-box { padding: 24px; border-radius: var(--radius); background: var(--tint); }
+.contact-box p + p { margin-top: 10px; }
+.contact-box .big { font-size: 1.25rem; font-weight: 700; }
+
+footer { padding-block: 28px 40px; border-top: 1px solid var(--line); color: var(--ink-2); font-size: 0.9375rem; }
+
+@media (max-width: 760px) {
+  body { font-size: 1.0625rem; }
+  .hero { padding-block: 36px 44px; }
+  .hero p { font-size: 1.125rem; }
+  main section { padding-block: 40px; }
+  .offer, .about { grid-template-columns: minmax(0, 1fr); gap: 20px; padding: 20px; }
+  .about { padding: 0; }
+  th, td { padding: 10px 12px; }
+}
+@media (max-width: 640px) {
+  .check .table-wrap { overflow: visible; border: 0; border-radius: 0; }
+  .check table, .check tbody, .check tr, .check th, .check td, .check caption { display: block; }
+  .check thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .check caption { padding: 0 0 4px; border: 0; }
+  .check tbody tr { margin-top: 10px; padding: 12px 14px; border: 1px solid var(--line); border-radius: var(--radius); }
+  .check tbody th, .check tbody td { padding: 0; border: 0; }
+  .check td.num { margin-top: 6px; text-align: left; }
+  .check td.num::after { content: " of the sites"; font-weight: 400; color: var(--ink-2); }
+  .check td.who { margin-top: 2px; }
+  .check td.std { margin-top: 4px; white-space: normal; font-size: 0.9375rem; }
+  .check td.std::before { content: "WCAG 2.1: "; }
+  .check td.std.bp::before { content: "Not a WCAG rule: "; }
+}
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+<header>
+<div class="wrap top">
+<a class="name" href="#top" id="top">Miles McQueen</a>
+<nav aria-label="Page sections"><ul class="top-links"><li><a href="#offer">Founding offer</a></li><li><a href="#check">What I check</a></li><li><a href="#contact">Contact</a></li></ul></nav>
+</div>
+<div class="wrap hero">
+<h1>Websites that everyone in your community can use</h1>
+<p>I fix accessibility problems on WordPress sites for small public agencies and nonprofits, then keep those sites updated, backed up and fast. Fixed prices, written scopes and no long contracts.</p>
+<a class="cta" href="#contact">Ask for a free check of your site</a>
+</div>
+</header>
+
+<main id="main" tabindex="-1">
+<section id="offer" aria-labelledby="offer-h">
+<div class="wrap">
+<h2 id="offer-h">Founding offer: an accessibility tune-up</h2>
+<p class="lead">I'm taking on three organizations this fall at a founding price, in exchange for permission to list each one as a reference.</p>
+<div class="offer">
+<div>
+<h3>What you get</h3>
+<ul>
+<li>The top accessibility problems fixed on up to 10 key pages of your WordPress site: menus, color contrast, form labels, headings, image descriptions and links to PDFs</li>
+<li>Updates, daily backups and uptime monitoring set up and running</li>
+<li>A short written report of what changed, tested against WCAG 2.1 AA</li>
+<li>A 30-minute walkthrough so your staff can keep new pages accessible</li>
+</ul>
+</div>
+<div>
+<p class="price">$750</p>
+<p class="price-note">Fixed price. Delivered within two weeks of getting access.</p>
+<div class="terms">
+<p>You keep every login. I work on a copy first where your host allows it.</p>
+<p>In return, I ask to list you as a reference and to describe the work.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="check" class="check" aria-labelledby="check-h">
+<div class="wrap">
+<h2 id="check-h">What I check</h2>
+<p class="lead">In October 2026 I checked the homepages of 46 websites run by villages, public libraries, business improvement districts and park groups in New York. 42 had at least one problem that blocks some visitors. These came up most often:</p>
+<div class="table-wrap" role="region" aria-labelledby="check-cap" tabindex="0">
+<table>
+<caption id="check-cap">Most common problems on 46 homepages, October 2026</caption>
+<thead><tr><th scope="col">Problem</th><th scope="col" class="num">Sites</th><th scope="col">Who it blocks</th><th scope="col">WCAG 2.1</th></tr></thead>
+<tbody>
+<tr><th scope="row">Links with no text a screen reader can read, often social media icons</th><td class="num">63%</td><td class="who">Screen-reader users, who can&rsquo;t tell where the link goes</td><td class="std">2.4.4, 4.1.2</td></tr>
+<tr><th scope="row">No main heading on the homepage</th><td class="num">54%</td><td class="who">Screen-reader users, who move through a page by its headings</td><td class="std bp">Best practice</td></tr>
+<tr><th scope="row">No &ldquo;skip to content&rdquo; link or main landmark</th><td class="num">39%</td><td class="who">Keyboard users, who tab through the whole menu on every page</td><td class="std">2.4.1</td></tr>
+<tr><th scope="row">Form fields with no label</th><td class="num">33%</td><td class="who">Screen-reader users, and anyone who loses the placeholder hint once they type</td><td class="std">1.3.1, 3.3.2</td></tr>
+<tr><th scope="row">Pinch-to-zoom turned off on phones</th><td class="num">28%</td><td class="who">People with low vision</td><td class="std">1.4.4</td></tr>
+<tr><th scope="row">A slideshow that moves on its own with no pause button</th><td class="num">13%</td><td class="who">People who need more time to read, or who are distracted by motion</td><td class="std">2.2.2</td></tr>
+<tr><th scope="row">Images with no alt text</th><td class="num">13%</td><td class="who">People who can&rsquo;t see the image</td><td class="std">1.1.1</td></tr>
+</tbody>
+</table>
+</div>
+<p class="note">Checked by script and by hand in Chrome, homepages only. A full review also covers your key inner pages and PDFs.</p>
+</div>
+</section>
+
+<section id="how" aria-labelledby="how-h">
+<div class="wrap">
+<h2 id="how-h">How it works</h2>
+<ol class="steps">
+<li>I send you three specific problems from your own site, free.</li>
+<li>We talk for 15 minutes about what matters most to you.</li>
+<li>You sign a one-page agreement with the scope, price and dates.</li>
+<li>I make the fixes and set up updates, backups and monitoring within two weeks.</li>
+<li>You get a short report and a walkthrough for your staff.</li>
+</ol>
+</div>
+</section>
+
+<section id="contact" aria-labelledby="contact-h">
+<div class="wrap about">
+<div>
+<h2 id="contact-h">About and contact</h2>
+<p class="lead">I'm Miles McQueen, a web developer in New York City. I build and maintain accessible WordPress sites for small public agencies and nonprofits. You work with me directly, and you own your site and every account.</p>
+</div>
+<div class="contact-box">
+<p class="big"><a href="mailto:milesmcqueen98@gmail.com">milesmcqueen98@gmail.com</a></p>
+<p><a href="tel:+13238288904">(323) 828-8904</a></p>
+<p>New York, NY</p>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+<p>Miles McQueen, web developer, New York, NY. This page is built to WCAG 2.1 AA.</p>
+</div>
+</footer>
+<script>
+/* Keep table semantics when the phone layout stacks the rows (some browsers drop them with display:block). */
+(function () {
+  var t = document.querySelector(".check table");
+  if (!t) return;
+  t.setAttribute("role", "table");
+  t.querySelectorAll("thead, tbody").forEach(function (e) { e.setAttribute("role", "rowgroup"); });
+  t.querySelectorAll("tr").forEach(function (e) { e.setAttribute("role", "row"); });
+  t.querySelectorAll("thead th").forEach(function (e) { e.setAttribute("role", "columnheader"); });
+  t.querySelectorAll("tbody th").forEach(function (e) { e.setAttribute("role", "rowheader"); });
+  t.querySelectorAll("td").forEach(function (e) { e.setAttribute("role", "cell"); });
+})();
+</script>
+</body>
+</html>
